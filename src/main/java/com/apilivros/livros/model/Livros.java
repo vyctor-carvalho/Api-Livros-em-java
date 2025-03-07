@@ -14,8 +14,8 @@ public class Livros {
     private String idLivro;
     @Column(name = "nome")
     private String nome;
-    @Column(name = "altor")
-    private String altor;
+    @Column(name = "autor")
+    private String autor;
     @Column(name = "sinopse")
     private String sinopse;
     @Column(name = "anolancamento")
@@ -28,7 +28,7 @@ public class Livros {
     public Livros(String idLivro, String nome, String altor , String sinopse, int dataLacamento) {
         this.idLivro = idLivro;
         this.nome = nome;
-        this.altor = altor;
+        this.autor = altor;
         this.sinopse = sinopse;
         this.dataLacamento = dataLacamento;
     }
@@ -49,12 +49,12 @@ public class Livros {
         this.idLivro = idLivro;
     }
 
-    public String getAltor() {
-        return altor;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setAltor(String altor) {
-        this.altor = altor;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public String getSinopse() {
