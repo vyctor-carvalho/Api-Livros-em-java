@@ -21,7 +21,6 @@ Este é o meu primeiro projeto de API em Java. A API foi desenvolvida utilizando
 A API expõe os seguintes endpoints para realizar as operações CRUD:
 
 - **POST /livros**: Criar um novo livro.
-- **GET /livros**: Recuperar todos os livros.
 - **GET /livros/{id}**: Recuperar informações de um livro específico pelo ID.
 - **PUT /livros/{id}**: Atualizar os dados de um livro pelo ID.
 - **DELETE /livros/{id}**: Deletar um livro pelo ID.
