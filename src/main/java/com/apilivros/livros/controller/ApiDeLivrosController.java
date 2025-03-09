@@ -56,8 +56,8 @@ public class ApiDeLivrosController {
     }
 
     @GetMapping()
-    public Livros getByNome (@RequestParam("nome") String nome) {
-        return  repository.findByNome(nome);
+    public List<Livros> getByNome (@RequestParam("nome") String nome) {
+        return  repository.findByNomeContaining(nome);
     }
 
     @DeleteMapping("/{id}")
