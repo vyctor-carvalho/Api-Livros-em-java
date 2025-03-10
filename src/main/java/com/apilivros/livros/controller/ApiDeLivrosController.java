@@ -3,6 +3,7 @@ package com.apilivros.livros.controller;
 import com.apilivros.livros.model.Livros;
 import com.apilivros.livros.repositoty.ApiDeLivrosRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,25 +20,8 @@ public class ApiDeLivrosController {
         this.repository = repository;
     }
 
-    /*@RequestMapping()
-    public String home () {
-        return "<h1>Pagina inicial</h1>";
-    }*/
-
-    //Pegando um objeto por vez
-    /*
-    @PostMapping("/")
-    public Livros post (@RequestBody Livros livro) {
-        String id = UUID.randomUUID().toString();
-        livro.setIdLivro(id);
-        repository.save(livro);
-        System.out.println("Produto " + livro.getNome() + " cadastrado com sucesso.");
-        return livro;
-    }
-    */
-
-    //Pegando um array de objetos
-    @PostMapping("/")
+    //Colocando um array de objetos
+    @PostMapping()
     public List<Livros> addLivros(@RequestBody List<Livros> livros) {
 
         for (Livros i : livros) {
@@ -56,8 +40,11 @@ public class ApiDeLivrosController {
     }
 
     @GetMapping()
-    public Livros getByNome (@RequestParam("nome") String nome) {
-        return  repository.findByNome(nome);
+    public List<Livros> getByNome (@RequestParam(value = "nome", required = false) String nome) {
+        if (!StringUtils.hasText(nome)) {
+            return repository.findAll();
+        }
+        return  repository.findByNomeContaining(nome);
     }
 
     @DeleteMapping("/{id}")

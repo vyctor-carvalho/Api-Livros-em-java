@@ -1,0 +1,116 @@
+[
+  {
+    "nome": "Sherlock Holmes",
+    "autor": "Arthur Conan Doyle",
+    "sinopse": "Detetive brilhante resolve mistérios.",
+    "dataLacamento": 1887
+  },
+  {
+    "nome": "Dom Quixote",
+    "autor": "Miguel de Cervantes",
+    "sinopse": "As aventuras de um cavaleiro sonhador e seu fiel escudeiro.",
+    "dataLacamento": 1605
+  },
+  {
+    "nome": "O Pequeno Príncipe",
+    "autor": "Antoine de Saint-Exupéry",
+    "sinopse": "Aventura filosófica de um príncipe em planetas.",
+    "dataLacamento": 1943
+  },
+  {
+    "nome": "Moby Dick",
+    "autor": "Herman Melville",
+    "sinopse": "A obsessão de um capitão por capturar uma baleia branca.",
+    "dataLacamento": 1851
+  },
+  {
+    "nome": "A Metamorfose",
+    "autor": "Franz Kafka",
+    "sinopse": "Um homem acorda transformado em um inseto gigante e enfrenta o isolamento.",
+    "dataLacamento": 1915
+  },
+  {
+    "nome": "O Hobbit",
+    "autor": "J.R.R. Tolkien",
+    "sinopse": "Aventura de um hobbit em busca de um tesouro guardado por um dragão.",
+    "dataLacamento": 1937
+  },
+  {
+    "nome": "O Código Da Vinci",
+    "autor": "Dan Brown",
+    "sinopse": "Um mistério envolvendo símbolos, sociedades secretas e a Igreja.",
+    "dataLacamento": 2003
+  },
+  {
+    "nome": "Crime e Castigo",
+    "autor": "Fiódor Dostoiévski",
+    "sinopse": "Um jovem estudante comete um crime e enfrenta dilemas morais.",
+    "dataLacamento": 1866
+  },
+  {
+    "nome": "A Revolução dos Bichos",
+    "autor": "George Orwell",
+    "sinopse": "Uma fábula política sobre animais que tomam o controle de uma fazenda.",
+    "dataLacamento": 1945
+  },
+  {
+    "nome": "Duna",
+    "autor": "Frank Herbert",
+    "sinopse": "Uma jornada política e espiritual em um planeta deserto.",
+    "dataLacamento": 1965
+  },
+  {
+    "nome": "Percy Jackson e o Ladrão de Raios",
+    "autor": "Rick Riordan",
+    "sinopse": "Jovem descobre ser filho de um deus grego.",
+    "dataLacamento": 2005
+  },
+  {
+    "nome": "As Crônicas de Nárnia",
+    "autor": "C.S. Lewis",
+    "sinopse": "Um grupo de crianças descobre um mundo mágico através de um guarda-roupa.",
+    "dataLacamento": 1950
+  },
+  {
+    "nome": "Cem Anos de Solidão",
+    "autor": "Gabriel García Márquez",
+    "sinopse": "A saga da família Buendía na fictícia cidade de Macondo.",
+    "dataLacamento": 1967
+  },
+  {
+    "nome": "Orgulho e Preconceito",
+    "autor": "Jane Austen",
+    "sinopse": "O romance entre Elizabeth Bennet e o enigmático Sr. Darcy.",
+    "dataLacamento": 1813
+  },
+  {
+    "nome": "1984",
+    "autor": "George Orwell",
+    "sinopse": "Uma sociedade distópica sob vigilância constante do Grande Irmão.",
+    "dataLacamento": 1949
+  },
+  {
+    "nome": "A Guerra dos Tronos",
+    "autor": "George R.R. Martin",
+    "sinopse": "Conflitos políticos em um reino medieval.",
+    "dataLacamento": 1996
+  },
+  {
+    "nome": "Rei Arthur",
+    "autor": "George",
+    "sinopse": "Uma história sobre um rei da Inglaterra",
+    "dataLacamento": 2007
+  },
+  {
+    "nome": "O Nome do Vento",
+    "autor": "Patrick Rothfuss",
+    "sinopse": "A história de um jovem talentoso que se torna um lendário mago.",
+    "dataLacamento": 2007
+  },
+  {
+    "nome": "O Senhor dos Anéis",
+    "autor": "J.R.R. Tolkien",
+    "sinopse": "Uma jornada épica para destruir um anel poderoso e salvar a Terra-média.",
+    "dataLacamento": 1954
+  }
+]
