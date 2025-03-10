@@ -10,4 +10,5 @@ import java.util.List;
 public interface ApiDeLivrosRepository extends JpaRepository <Livros, String> {
     //Livros findByNome(String nome);
     List<Livros> findByNomeContaining(String nome);
+    List<Livros> findAll();
 }

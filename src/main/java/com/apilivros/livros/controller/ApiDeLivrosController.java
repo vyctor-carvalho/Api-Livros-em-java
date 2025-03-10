@@ -1,8 +1,10 @@
 package com.apilivros.livros.controller;
 
+import ch.qos.logback.core.util.StringUtil;
 import com.apilivros.livros.model.Livros;
 import com.apilivros.livros.repositoty.ApiDeLivrosRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,13 +52,16 @@ public class ApiDeLivrosController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Livros> get (@PathVariable("id") String id) {
+    public Optional<Livros> getById (@PathVariable("id") String id) {
         Optional<Livros> livro = repository.findById(id);
         return livro;
     }
 
     @GetMapping()
-    public List<Livros> getByNome (@RequestParam("nome") String nome) {
+    public List<Livros> getAllByName (@RequestParam(value = "nome", required = false) String nome) {
+        if (nome == null || nome.isEmpty()) {
+            return repository.findAll();
+        }
         return  repository.findByNomeContaining(nome);
     }
 
@@ -70,4 +75,5 @@ public class ApiDeLivrosController {
         livro.setIdLivro(id);
         repository.save(livro);
     }
+
 }
