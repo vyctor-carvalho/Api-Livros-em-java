@@ -1,13 +1,12 @@
+
 spring:
   application:
     name: Api de livros
   datasource:
-    url: jdbc:mysql://localhost:3306/biblioteca
+    url: jdbc:mysql://db:3306/biblioteca
     username: root
-    password: -
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      maximum-pool-size: 10
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
