@@ -1,4 +1,4 @@
-package com.apilivros.livros.model;
+package com.apilivros.livros.tabelas;
 
 
 import jakarta.persistence.Column;
