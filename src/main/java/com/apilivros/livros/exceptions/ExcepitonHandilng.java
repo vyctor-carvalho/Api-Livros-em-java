@@ -1,11 +1,14 @@
 package com.apilivros.livros.exceptions;
 
+import jakarta.servlet.ServletException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
+
+import java.io.IOException;
 
 @ControllerAdvice
 public class ExcepitonHandilng {
@@ -27,8 +30,20 @@ public class ExcepitonHandilng {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }
 
+    @ExceptionHandler(ServletException.class)
+    public ResponseEntity<ExcepiontModel> doFilterExcepition(ServletException ex) {
+        ExcepiontModel erroFilter = new ExcepiontModel(HttpStatus.BAD_REQUEST, ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(erroFilter);
+    }
+
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<ExcepiontModel> ioExcepiton(IOException ex) {
+        ExcepiontModel erroFilter = new ExcepiontModel(HttpStatus.BAD_REQUEST, ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(erroFilter);
+    }
+
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ExcepiontModel> NoIndexFound(Exception ex) {
+    public ResponseEntity<ExcepiontModel> internalServerError(Exception ex) {
         String mensage = "Erro interno: " + ex.getMessage();
         ExcepiontModel errorResponse = new ExcepiontModel(HttpStatus.INTERNAL_SERVER_ERROR, mensage);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);

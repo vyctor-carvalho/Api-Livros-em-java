@@ -2,8 +2,7 @@ package com.apilivros.livros.controller;
 
 import com.apilivros.livros.exceptions.UserNotFound;
 import com.apilivros.livros.tabelas.Livros;
-import com.apilivros.livros.repositoty.ApiDeLivrosRepository;
-import org.springframework.http.HttpStatus;
+import com.apilivros.livros.repositoty.LivrosRepository;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +14,9 @@ import java.util.UUID;
 @RequestMapping("/livros")
 public class ApiDeLivrosController {
 
-    private ApiDeLivrosRepository repository;
+    private LivrosRepository repository;
 
-    public ApiDeLivrosController(ApiDeLivrosRepository repository) {
+    public ApiDeLivrosController(LivrosRepository repository) {
         this.repository = repository;
     }
 
@@ -26,7 +25,7 @@ public class ApiDeLivrosController {
     @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping()
     public List<Livros> addLivros(@RequestBody List<Livros> livros) {
-
+        System.out.println("Pegando livros:");
         for (Livros i : livros) {
             String id = UUID.randomUUID().toString();
             i.setIdLivro(id);
@@ -36,7 +35,6 @@ public class ApiDeLivrosController {
         return livros;
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{id}")
     public Optional<Livros> get (@PathVariable("id") String id) {
 
@@ -44,25 +42,22 @@ public class ApiDeLivrosController {
         if (livro.isEmpty()) {
             throw new UserNotFound();
         }
-
         return livro;
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping()
     public List<Livros> getByNome (@RequestParam(value = "nome", required = false) String nome) {
+
+        if (!StringUtils.hasText(nome)) {
+            return repository.findAll();
+        }
         List<Livros> livros = repository.findByNomeContaining(nome);
         if (livros.isEmpty()) {
             throw new UserNotFound();
         }
-        if (!StringUtils.hasText(nome)) {
-            return repository.findAll();
-        }
-
         return  livros;
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/{id}")
     public void delet (@PathVariable("id") String id) {
         if (repository.findById(id).isEmpty()) {
@@ -71,7 +66,6 @@ public class ApiDeLivrosController {
         repository.deleteById(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/{id}")
     public void alterar (@RequestBody Livros livro, @PathVariable("id") String id) {
         if (repository.findById(id).isEmpty()) {

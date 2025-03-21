@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ApiDeLivrosRepository extends JpaRepository <Livros, String> {
+public interface LivrosRepository extends JpaRepository <Livros, String> {
     List<Livros> findByNomeContaining(String nome);
     List<Livros> findAll();
 }
